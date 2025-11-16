@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Bài kiểm tra nhanh </title>
+<style>
+body { font-family: Arial; padding: 20px; }
+#quiz { display: none; }
+</style>
+
+<script>
+function kiemTraMa() {
+  let maNhap = document.getElementById("ma").value;
+  if(maNhap == "1") {
+    document.getElementById("khoa").style.display = "none";
+    document.getElementById("quiz").style.display = "block";
+  } else {
+    alert("Sai mã truy cập! Hỏi lại giáo viên nhé.");
+  }
+}
+
+function kiemTra() {
+  let diem = 0;
+
+  if (document.getElementById("cau1_b").checked) diem++;
+  if (document.getElementById("cau2_d").checked) diem++;
+  if (document.getElementById("cau3_b").checked) diem++;
+  if (document.getElementById("cau4_d").checked) diem++;
+  if (document.getElementById("cau5_c").checked) diem++;
+
+  document.getElementById("ketqua").innerText = "Số câu đúng của em là: " + diem + "/5";
+}
+</script>
+</head>
+
+<body>
+
+<div id="khoa">
+  <h2>Nhập mã truy cập để làm bài tập 1</h2>
+  <input type="password" id="ma" placeholder="Nhập mã...">
+  <button onclick="kiemTraMa()">Bắt đầu</button>
+</div>
+
+<div id="quiz">
+  <h2 align="center" style="color:red"> BÀI TẬP CỦNG CỐ </h2>
+  <h4 align="center" style="color:darkblue"> CẤU TRÚC CHUNG DANH SÁCH CÓ THỨ TỰ VÀ KHÔNG CÓ THỨ TỰ TRONG HTML </h4>
+
+  <p>1. Trong HTML, thẻ nào được sử dụng để <b>bắt đầu</b> một danh sách?</p>
+  <input type="radio" name="cau1" id="cau1_a"> A. &lt;li&gt;<br>
+  <input type="radio" name="cau1" id="cau1_b"> B. &lt;ul&gt;<br>
+  <input type="radio" name="cau1" id="cau1_c"> C. &lt;item&gt;<br>
+  <input type="radio" name="cau1" id="cau1_d"> D. &lt;list&gt;<br>
+
+ <hr>
+ <p>2. Trong cấu trúc danh sách HTML, thẻ &lt;li&gt; đại diện cho thành phần nào?</p>
+
+
+  <input type="radio" name="cau2" id="cau2_a"> A. Thẻ bắt đầu danh sách<br>
+  <input type="radio" name="cau2" id="cau2_b"> B. Thẻ kết thúc danh sách<br>
+  <input type="radio" name="cau2" id="cau2_c"> C. Một mục (item) trong danh sách<br>
+  <input type="radio" name="cau2" id="cau2_d"> D. Một đoạn văn bản<br>
+ <hr>
+
+<p>3. Nếu thẻ bắt đầu là &lt;ul&gt;, thì danh sách được tạo ra sẽ là loại danh sách nào? </p>
+  <input type="radio" name="cau3" id="cau3_a"> A. Danh sách được đánh số (Numbered List)<br>
+  <input type="radio" name="cau3" id="cau3_b"> B. Danh sách không thứ tự (Unordered List)<br>
+  <input type="radio" name="cau3" id="cau3_c"> C. Danh sách định nghĩa (Definition List)<br>
+  <input type="radio" name="cau3" id="cau3_d"> D. Danh sách có thể nhấp chuột (Clickable List)<br>
+ <hr>
+
+<p>4. Giả sử "thẻ bắt đầu" là &lt;ol&gt;, thì "thẻ kết thúc" tương ứng phải là gì để tạo ra một danh sách hợp lệ? <br> 
+
+  <input type="radio" name="cau4" id="cau4_a"> A. &lt;/list&gt;<br>
+  <input type="radio" name="cau4" id="cau4_b"> B. &lt;/li&gt;<br>
+  <input type="radio" name="cau4" id="cau4_c"> C. &lt;/item&gt;<br>
+  <input type="radio" name="cau4" id="cau4_d"> D. &lt;/ol&gt;<br>
+ <hr>
+
+<p>5. Để tạo ra nhiều mục như "mục thứ 1" đến "mục thứ n" trong một danh sách, bạn cần lặp lại thẻ nào?<br> 
+
+  <input type="radio" name="cau5" id="cau5_a"> A. Thẻ bắt đầu<br>
+  <input type="radio" name="cau5" id="cau5_b"> B. Thẻ kết thúc<br>
+  <input type="radio" name="cau5" id="cau5_c"> C. Thẻ &lt;li&gt; và &lt;/li&gt;<br>
+  <input type="radio" name="cau5" id="cau5_d"> D. Chỉ cần một thẻ &lt;li&gt; duy nhất<br>
+
+  <br>
+  <button onclick="kiemTra()">Nộp bài</button>
+  <p id="ketqua"></p>
+</div>
+
+</body>
+</html
