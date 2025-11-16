@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Bài kiểm tra nhanh </title>
+<style>
+body { font-family: Arial; padding: 20px; }
+#quiz { display: none; }
+</style>
+
+<script>
+function kiemTraMa() {
+  let maNhap = document.getElementById("ma").value;
+  if(maNhap == "3") {
+    document.getElementById("khoa").style.display = "none";
+    document.getElementById("quiz").style.display = "block";
+  } else {
+    alert("Sai mã truy cập! Hỏi lại giáo viên nhé.");
+  }
+}
+
+function kiemTra() {
+  let diem = 0;
+
+  if (document.getElementById("cau1_d").checked) diem++;
+  if (document.getElementById("cau2_c").checked) diem++;
+  if (document.getElementById("cau3_c").checked) diem++;
+  if (document.getElementById("cau4_b").checked) diem++;
+  if (document.getElementById("cau5_c").checked) diem++;
+
+  document.getElementById("ketqua").innerText = "Số câu đúng của em là: " + diem + "/5";
+}
+</script>
+</head>
+
+<body>
+
+<div id="khoa">
+  <h2>Nhập mã truy cập để làm bài tập 3</h2>
+  <input type="password" id="ma" placeholder="Nhập mã...">
+  <button onclick="kiemTraMa()">Bắt đầu</button>
+</div>
+
+<div id="quiz">
+  <h2 align="center" style="color:red"> BÀI TẬP CỦNG CỐ </h2>
+  <h4 align="center" style="color:darkblue"> CẤU TRÚC DANH SÁCH MÔ TẢ TRONG HTML </h4>
+
+
+  <p>1. Cặp thẻ nào được sử dụng để tạo một Danh sách Mô tả (Description List) trong HTML?</p>
+  <input type="radio" name="cau1" id="cau1_a"> A. &lt;ol&gt; và &lt;/li&gt;<br>
+  <input type="radio" name="cau1" id="cau1_b"> B. &lt;ul&gt; và &lt;/li&gt;<br>
+  <input type="radio" name="cau1" id="cau1_c"> C. &lt;dl&gt; và &lt;/li&gt;<br>
+  <input type="radio" name="cau1" id="cau1_d"> D. &lt;dl&gt; và &lt;/dt&gt;<br>
+
+ <hr>
+ <p>2. Trong một Danh sách Mô tả HTML, thẻ nào được sử dụng để xác định Tên Mục (Term/Name)?</p>
+ 
+   <input type="radio" name="cau2" id="cau2_a">A. &lt;dd&gt;(Description Data)<br>
+   <input type="radio" name="cau2" id="cau2_b">B. &lt;dlist&gt;(Description List)<br>
+   <input type="radio" name="cau2" id="cau2_c">C. &lt;dt&gt;(Description Term)<br>
+   <input type="radio" name="cau2" id="cau2_d">D. &lt;dl&gt;(Description List)<br>
+ <hr>
+
+<p>3. Xem xét cấu trúc HTML sau, phần nào là Mô tả của Mục? </p>
+
+ <pre>
+&lt;dl&gt;
+  &lt;dt&gt;HTML&lt;/dt&gt;
+  &lt;dd&gt;Ngôn ngữ đánh dấu siêu văn bản.&lt;/dd&gt;
+&lt;/dl&gt;
+</pre>
+<br>
+  <input type="radio" name="cau3" id="cau3_a"> A. &lt;ld&gt;<br>
+  <input type="radio" name="cau3" id="cau3_b"> B. &lt;dt&gt;HTML&lt;/dt&gt:<br>
+  <input type="radio" name="cau3" id="cau3_c"> C. &lt;dd&gt;Ngôn ngữ đánh dấu siêu văn bản.&lt;/dd&gt;<br>
+  <input type="radio" name="cau3" id="cau3_d"> D. HTML<br>
+ <hr>
+
+<p>4. Thẻ &lt;dd&gt; trong Danh sách Mô tả HTML (&lt;dl&gt;) có vai trò gì?<br> 
+
+  <input type="radio" name="cau4" id="cau4_a"> A. Xác định tên hoặc thuật ngữ của mục<br>
+  <input type="radio" name="cau4" id="cau4_b"> B. Chứa mô tả hoặc định nghĩa cho mục tương ứng<br>
+  <input type="radio" name="cau4" id="cau4_c"> C. Bắt đầu và kết thúc toàn bộ danh sách mô tả<br>
+  <input type="radio" name="cau4" id="cau4_d"> D. Tạo một mục trong danh sách có thứ tự.<br>
+ <hr>
+
+<p>5. Cấu trúc sau đây mô tả loại danh sách nào trong HTML?</p>
+  
+<pre>
+&lt;dl&gt;
+  &lt;dt&gt;...&lt;/dt&gt;
+  &lt;dd&gt;...&lt;/dd&gt;
+&lt;/dl&gt;
+</pre>
+<br>
+
+
+<input type="radio" name="cau5" id="cau5_a"> A. Danh sách không có thứ tự (Unordered List)<br>
+  <input type="radio" name="cau5" id="cau5_b"> B. Danh sách có thứ tự (Ordered List).<br>
+  <input type="radio" name="cau5" id="cau5_c"> C. Danh sách mô tả (Description List)<br>
+  <input type="radio" name="cau5" id="cau5_d"> D. Danh sách lồng nhau (Nested List).<br>
+
+  <br>
+  <button onclick="kiemTra()">Nộp bài</button>
+  <p id="ketqua"></p>
+</div>
+
+</body>
+</html
