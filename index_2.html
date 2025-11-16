@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Bài kiểm tra nhanh </title>
+<style>
+body { font-family: Arial; padding: 20px; }
+#quiz { display: none; }
+</style>
+
+<script>
+function kiemTraMa() {
+  let maNhap = document.getElementById("ma").value;
+  if(maNhap == "2") {
+    document.getElementById("khoa").style.display = "none";
+    document.getElementById("quiz").style.display = "block";
+  } else {
+    alert("Sai mã truy cập! Hỏi lại giáo viên nhé.");
+  }
+}
+
+function kiemTra() {
+  let diem = 0;
+
+  if (document.getElementById("cau1_a").checked) diem++;
+  if (document.getElementById("cau2_b").checked) diem++;
+  if (document.getElementById("cau3_b").checked) diem++;
+  if (document.getElementById("cau4_a").checked) diem++;
+  if (document.getElementById("cau5_b").checked) diem++;
+
+  document.getElementById("ketqua").innerText = "Số câu đúng của em là: " + diem + "/5";
+}
+</script>
+</head>
+
+<body>
+
+<div id="khoa">
+  <h2>Nhập mã truy cập để làm bài tập 2</h2>
+  <input type="password" id="ma" placeholder="Nhập mã...">
+  <button onclick="kiemTraMa()">Bắt đầu</button>
+</div>
+
+<div id="quiz">
+  <h2 align="center" style="color:red"> BÀI TẬP CỦNG CỐ </h2>
+  <h4 align="center" style="color:darkblue"> CẤU TRÚC DANH SÁCH CÓ THỨ TỰ VÀ KHÔNG CÓ THỨ TỰ TRONG HTML </h4>
+
+
+  <p>1. Dùng thẻ nào dưới đây để khai báo danh sách có thứ tự</p>
+  <input type="radio" name="cau1" id="cau1_a"> A. &lt;ol&gt; &lt;/ol&gt;<br>
+  <input type="radio" name="cau1" id="cau1_b"> B. &lt;ul&gt; &lt;/ul&gt;<br>
+  <input type="radio" name="cau1" id="cau1_c"> C. &lt;li&gt; &lt;/li&gt;<br>
+  <input type="radio" name="cau1" id="cau1_d"> D. &lt;dl&gt; &lt;/dl&gt;<br>
+
+ <hr>
+ <p>2. Phương án nào dưới đây nêu đúng kết quả của đoạn lệnh sau</p>
+ <p> _______________________</p>
+  &lt;ol&gt;  type="1" start="3"&gt;<br>
+  &nbsp;&nbsp;&lt;li&gt; Mục 1 &lt;/li&gt;<br>
+  &nbsp;&nbsp;&lt;li&gt; Mục 2 &lt;/li&gt;<br>
+  &nbsp;&nbsp;&lt;li&gt; Mục 3 &lt;/li&gt;<br>
+  &lt;/ol&gt;
+<p> ________________________</p>
+
+</p>
+<input type="radio" name="cau2" id="cau2_a">   A. Tạo danh sách có thứ tự bắt đầu từ 1<br>
+  <input type="radio" name="cau2" id="cau2_b"> B. Tạo danh sách có thứ tự bắt đầu từ 3<br>
+  <input type="radio" name="cau2" id="cau2_c"> C. Tạo danh sách không có thứ tự<br>
+  <input type="radio" name="cau2" id="cau2_d"> D. Tạo danh sách mô tả<br>
+ <hr>
+
+<p>3. Dùng thẻ nào dưới đây để khai báo danh sách không có thứ tự </p>
+  <input type="radio" name="cau3" id="cau3_a"> A. &lt;ol&gt; &lt;/ol&gt;<br>
+  <input type="radio" name="cau3" id="cau3_b"> B. &lt;ul&gt; &lt;/ul&gt;<br>
+  <input type="radio" name="cau3" id="cau3_c"> C. &lt;li&gt; &lt;/li&gt;<br>
+  <input type="radio" name="cau3" id="cau3_d"> D. &lt;dl&gt; &lt;/dl&gt;<br>
+ <hr>
+
+<p>4. Đặc tính list-style-type của thuộc tính style trong thẻ &lt;ul&gt; &lt;/ul&gt; <br> 
+KHÔNG thể nhận giá trị nào dưới đây</p>
+  <input type="radio" name="cau4" id="cau4_a"> A. a, A<br>
+  <input type="radio" name="cau4" id="cau4_b"> B. none<br>
+  <input type="radio" name="cau4" id="cau4_c"> C. disc, circle<br>
+  <input type="radio" name="cau4" id="cau4_d"> D. square<br>
+ <hr>
+
+<p>5. Phương án dưới đây nêu đúng kết quả lệnh tạo danh sách không thứ tự nhưng<br> 
+KHÔNG khai báo thuộc tính style?</p>
+  <input type="radio" name="cau5" id="cau5_a"> A. Tạo danh sách không có thứ tự, bắt đầu từ mục 1<br>
+  <input type="radio" name="cau5" id="cau5_b"> B. Tạo danh sách không có thứ tự, bắt đầu từ mục * <br>
+  <input type="radio" name="cau5" id="cau5_c"> C. Tạo danh sách không có thứ tự, bắt đầu từ mục - <br>
+  <input type="radio" name="cau5" id="cau5_d"> D. Tạo danh sách không có thứ tự, bắt đầu từ chữ a.<br>
+
+  <br>
+  <button onclick="kiemTra()">Nộp bài</button>
+  <p id="ketqua"></p>
+</div>
+
+</body>
+</html
